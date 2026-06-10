@@ -2,7 +2,7 @@
 
 A Tampermonkey userscript that makes the new Gemini web UI more comfortable for Chinese reading.
 
-It focuses on typography: Chinese font fallback, line height, paragraph rhythm, response width, prompt text, input text, and sidebar density. It intentionally avoids taking over Gemini's interactive Markdown widgets such as code blocks, tables, math rendering, and action buttons.
+It focuses on typography: Chinese font fallback, line height, paragraph rhythm, response width, prompt text, and input text. It intentionally avoids taking over Gemini's interactive Markdown widgets such as code blocks, tables, math rendering, and action buttons.
 
 ## Install
 
@@ -16,7 +16,6 @@ It focuses on typography: Chinese font fallback, line height, paragraph rhythm, 
 - Uses a Chinese-first font stack for Gemini responses and prompts.
 - Narrows the response measure for more natural Chinese line length.
 - Tightens paragraph rhythm for continuous long-form reading.
-- Enlarges the left sidebar slightly so it does not feel mismatched with the body text.
 - Keeps Gemini's code blocks, tables, formulas, chips, and buttons close to their native rendering.
 
 Gemini's code blocks may be wider than the prose column. This script preserves that native behavior because code needs more horizontal space and Gemini's code block header/actions are interactive controls.

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Gemini Typography Tune for Chinese
 // @namespace    https://github.com/piktcai/gemini-typography-tune
-// @version      0.4.5
+// @version      0.4.6
 // @description  Refine Gemini typography for Chinese reading while preserving native code blocks, tables, formulas, and controls.
 // @author       local
 // @match        https://gemini.google.com/*
@@ -28,7 +28,6 @@
       lineHeight: "1.56",
       paragraphGap: "0",
       listGap: "0",
-      sidebarSize: "15.25px",
       maxMeasure: "42em",
     },
     editorial: {
@@ -38,7 +37,6 @@
       lineHeight: "1.62",
       paragraphGap: "0.08em",
       listGap: "0.03em",
-      sidebarSize: "15.5px",
       maxMeasure: "40em",
     },
     compact: {
@@ -48,7 +46,6 @@
       lineHeight: "1.5",
       paragraphGap: "0",
       listGap: "0",
-      sidebarSize: "14.75px",
       maxMeasure: "44em",
     },
   };
@@ -124,7 +121,6 @@
         --gtt-mono-font: ${fontStacks.mono};
         --gtt-content-size: ${mode.contentSize};
         --gtt-ui-size: ${mode.uiSize};
-        --gtt-sidebar-size: ${mode.sidebarSize};
         --gtt-line-height: ${mode.lineHeight};
         --gtt-paragraph-gap: ${mode.paragraphGap};
         --gtt-list-gap: ${mode.listGap};
@@ -163,45 +159,10 @@
       chat-window,
       chat-window-content,
       modular-zero-state,
-      side-navigation-v2,
-      side-navigation-content,
-      conversations-list,
-      conversations-list-signed-out,
       input-container,
       input-area-v2 {
         font-family: var(--gtt-ui-font) !important;
         letter-spacing: 0 !important;
-      }
-
-      side-navigation-v2,
-      side-navigation-content,
-      conversations-list,
-      conversations-list-signed-out,
-      project-sidenav-list,
-      project-sidenav-list-item,
-      gem-nav-list-item,
-      .conversation-title,
-      .conversation-title-text,
-      .conversation-title-text-v2,
-      .conversation-item-title,
-      .nav-item-title,
-      .mat-mdc-list-item-title,
-      .mdc-list-item__primary-text,
-      .expandable-section-header,
-      .section-title,
-      .history-title,
-      .sidenav-with-history-container {
-        font-family: var(--gtt-ui-font) !important;
-        font-size: var(--gtt-sidebar-size) !important;
-        line-height: 1.42 !important;
-        letter-spacing: 0 !important;
-      }
-
-      .expandable-section-header,
-      .section-title,
-      .history-title {
-        font-size: calc(var(--gtt-sidebar-size) * 0.94) !important;
-        color: var(--gtt-muted) !important;
       }
 
       .logo,
@@ -209,12 +170,7 @@
       .title,
       .subtitle,
       .headline,
-      .zero-state-title,
-      .conversation-title,
-      .conversation-title-text,
-      .conversation-item-title,
-      .conversation-title-text-v2,
-      gem-nav-list-item {
+      .zero-state-title {
         font-family: var(--gtt-content-font) !important;
         letter-spacing: 0 !important;
         font-weight: 560 !important;

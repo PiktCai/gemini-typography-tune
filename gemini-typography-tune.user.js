@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Gemini Typography Tune for Chinese
 // @namespace    https://github.com/PiktCai/ai-chat-typography-tune
-// @version      0.4.8
+// @version      0.4.9
 // @description  Refine Gemini typography for Chinese reading while preserving native code blocks, tables, formulas, and controls.
 // @author       local
 // @match        https://gemini.google.com/*
@@ -63,6 +63,7 @@
       "sans-serif",
     ].join(", "),
     content: [
+      "\"Google Sans Flex\"",
       "-apple-system",
       "BlinkMacSystemFont",
       "\"SF Pro Text\"",
@@ -210,6 +211,8 @@
         font-family: var(--gtt-content-font) !important;
         font-size: var(--gtt-content-size) !important;
         line-height: var(--gtt-line-height) !important;
+        font-stretch: 100% !important;
+        font-variation-settings: "wdth" 100, "slnt" 0, "ROND" 0;
         letter-spacing: 0 !important;
         word-break: auto-phrase;
         overflow-wrap: anywhere;
@@ -411,6 +414,8 @@
         font-family: var(--gtt-content-font) !important;
         font-size: var(--gtt-content-size) !important;
         line-height: 1.64 !important;
+        font-stretch: 100% !important;
+        font-variation-settings: "wdth" 100, "slnt" 0, "ROND" 0;
         letter-spacing: 0 !important;
       }
 

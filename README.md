@@ -20,12 +20,14 @@ Target: [Gemini](https://gemini.google.com/)
 
 What it changes:
 
-- Uses a Chinese-aware font stack for Gemini responses, prompts, and input text.
+- Uses a Chinese-aware readability font stack for Gemini responses and prompt bubbles.
 - Narrows the response measure for more natural Chinese line length.
 - Tightens paragraph rhythm for continuous long-form reading.
-- Keeps Gemini's code blocks, tables, formulas, chips, buttons, and sidebar close to their native rendering.
+- Keeps Gemini's input box, code blocks, tables, formulas, chips, buttons, and sidebar close to their native rendering.
 
 Gemini's code blocks may be wider than the prose column. This script preserves that native behavior because code needs more horizontal space and Gemini's code block header/actions are interactive controls.
+
+Gemini may render small Latin fragments with Google web fonts such as `Google Sans Flex SuperCondensed`. This script does not try to exactly restore those native Latin fallbacks. It intentionally prefers a steadier system/PingFang-oriented reading stack so mixed Chinese and English prose stays comfortable.
 
 Reading modes are available from the userscript manager menu:
 

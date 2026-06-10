@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Gemini Typography Tune for Chinese
 // @namespace    https://github.com/PiktCai/ai-chat-typography-tune
-// @version      0.4.7
+// @version      0.4.8
 // @description  Refine Gemini typography for Chinese reading while preserving native code blocks, tables, formulas, and controls.
 // @author       local
 // @match        https://gemini.google.com/*
@@ -52,8 +52,6 @@
 
   const fontStacks = {
     ui: [
-      "\"Google Sans Text\"",
-      "\"Google Sans\"",
       "-apple-system",
       "BlinkMacSystemFont",
       "\"SF Pro Text\"",
@@ -65,8 +63,6 @@
       "sans-serif",
     ].join(", "),
     content: [
-      "\"Google Sans Text\"",
-      "\"Google Sans\"",
       "-apple-system",
       "BlinkMacSystemFont",
       "\"SF Pro Text\"",
@@ -137,10 +133,7 @@
       }
 
       html,
-      body,
-      input,
-      textarea,
-      select {
+      body {
         font-family: var(--gtt-ui-font) !important;
         font-size: var(--gtt-ui-size);
         font-kerning: normal;
@@ -162,9 +155,7 @@
       chat-app,
       chat-window,
       chat-window-content,
-      modular-zero-state,
-      input-container,
-      input-area-v2 {
+      modular-zero-state {
         font-family: var(--gtt-ui-font) !important;
         letter-spacing: 0 !important;
       }
@@ -410,19 +401,6 @@
         font-size: 0.91em !important;
       }
 
-      /* Prompt/input area. */
-      rich-textarea,
-      .ql-editor,
-      [contenteditable="true"],
-      textarea,
-      [role="textbox"] {
-        font-family: var(--gtt-content-font) !important;
-        font-size: var(--gtt-content-size) !important;
-        line-height: 1.62 !important;
-        letter-spacing: 0 !important;
-        color: var(--gtt-soft-text) !important;
-      }
-
       /* User prompt chips/bubbles tend to look cramped in Chinese. */
       user-query,
       .user-query,
@@ -439,14 +417,6 @@
       .query-text,
       .query-text-line {
         text-wrap: pretty;
-      }
-
-      .ql-editor.ql-blank::before,
-      rich-textarea .ql-editor.ql-blank::before,
-      [contenteditable="true"][aria-label]::before {
-        font-family: var(--gtt-content-font) !important;
-        letter-spacing: 0 !important;
-        color: var(--gtt-muted) !important;
       }
 
       @supports not (word-break: auto-phrase) {

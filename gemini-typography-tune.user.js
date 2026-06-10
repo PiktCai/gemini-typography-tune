@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Gemini Typography Tune for Chinese
 // @namespace    https://github.com/PiktCai/ai-chat-typography-tune
-// @version      0.4.6
+// @version      0.4.7
 // @description  Refine Gemini typography for Chinese reading while preserving native code blocks, tables, formulas, and controls.
 // @author       local
 // @match        https://gemini.google.com/*
@@ -52,6 +52,8 @@
 
   const fontStacks = {
     ui: [
+      "\"Google Sans Text\"",
+      "\"Google Sans\"",
       "-apple-system",
       "BlinkMacSystemFont",
       "\"SF Pro Text\"",
@@ -63,6 +65,8 @@
       "sans-serif",
     ].join(", "),
     content: [
+      "\"Google Sans Text\"",
+      "\"Google Sans\"",
       "-apple-system",
       "BlinkMacSystemFont",
       "\"SF Pro Text\"",

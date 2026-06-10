@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Gemini Typography Tune for Chinese
 // @namespace    https://github.com/PiktCai/ai-chat-typography-tune
-// @version      0.5.0
+// @version      0.5.1
 // @description  Refine Gemini typography for Chinese reading while preserving native code blocks, tables, formulas, and controls.
 // @author       local
 // @match        https://gemini.google.com/*
@@ -51,6 +51,19 @@
   };
 
   const fontStacks = {
+    content: [
+      "-apple-system",
+      "BlinkMacSystemFont",
+      "\"SF Pro Text\"",
+      "\"Segoe UI\"",
+      "\"PingFang SC\"",
+      "\"Hiragino Sans GB\"",
+      "\"Noto Sans SC\"",
+      "\"Source Han Sans SC\"",
+      "\"Microsoft YaHei UI\"",
+      "\"Microsoft YaHei\"",
+      "sans-serif",
+    ].join(", "),
     mono: [
       "\"SFMono-Regular\"",
       "\"Cascadia Code\"",
@@ -92,6 +105,7 @@
 
     return `
       :root {
+        --gtt-content-font: ${fontStacks.content};
         --gtt-mono-font: ${fontStacks.mono};
         --gtt-content-size: ${mode.contentSize};
         --gtt-ui-size: ${mode.uiSize};
@@ -104,24 +118,6 @@
         --gtt-soft-text: light-dark(#3c4043, #d7dbe2);
         --gtt-code-bg: light-dark(#f4f6f8, #181b20);
         --gtt-code-border: light-dark(#dfe3e8, #303640);
-      }
-
-      @font-face {
-        font-family: "Google Sans Flex";
-        src: local("PingFang SC"), local("Noto Sans SC"), local("Source Han Sans SC"), local("Microsoft YaHei UI"), local("Microsoft YaHei");
-        unicode-range: U+2E80-2EFF, U+3000-303F, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FF00-FFEF;
-      }
-
-      @font-face {
-        font-family: "Google Sans Text";
-        src: local("PingFang SC"), local("Noto Sans SC"), local("Source Han Sans SC"), local("Microsoft YaHei UI"), local("Microsoft YaHei");
-        unicode-range: U+2E80-2EFF, U+3000-303F, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FF00-FFEF;
-      }
-
-      @font-face {
-        font-family: "Google Sans";
-        src: local("PingFang SC"), local("Noto Sans SC"), local("Source Han Sans SC"), local("Microsoft YaHei UI"), local("Microsoft YaHei");
-        unicode-range: U+2E80-2EFF, U+3000-303F, U+3400-4DBF, U+4E00-9FFF, U+F900-FAFF, U+FF00-FFEF;
       }
 
       html,
@@ -189,6 +185,7 @@
       [data-response-index],
       [data-test-id*="response"],
       [data-test-id*="conversation-turn"] {
+        font-family: var(--gtt-content-font) !important;
         font-size: var(--gtt-content-size) !important;
         line-height: var(--gtt-line-height) !important;
         letter-spacing: 0 !important;
@@ -377,6 +374,7 @@
       .query-text-line,
       [data-test-id*="user-query"],
       [data-test-id*="prompt-text"] {
+        font-family: var(--gtt-content-font) !important;
         font-size: var(--gtt-content-size) !important;
         line-height: 1.64 !important;
         letter-spacing: 0 !important;

@@ -19,6 +19,8 @@ It focuses on typography: Chinese font fallback, line height, paragraph rhythm, 
 - Enlarges the left sidebar slightly so it does not feel mismatched with the body text.
 - Keeps Gemini's code blocks, tables, formulas, chips, and buttons close to their native rendering.
 
+Gemini's code blocks may be wider than the prose column. This script preserves that native behavior because code needs more horizontal space and Gemini's code block header/actions are interactive controls.
+
 ## Reading Modes
 
 Use the userscript manager menu to switch modes:

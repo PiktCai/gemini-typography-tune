@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Gemini Typography Tune for Chinese
 // @namespace    https://github.com/piktcai/gemini-typography-tune
-// @version      0.4.4
-// @description  Refine Gemini typography for Chinese reading: font stack, line height, spacing, code blocks, and input density.
+// @version      0.4.5
+// @description  Refine Gemini typography for Chinese reading while preserving native code blocks, tables, formulas, and controls.
 // @author       local
 // @match        https://gemini.google.com/*
 // @match        https://bard.google.com/*
@@ -66,15 +66,16 @@
       "sans-serif",
     ].join(", "),
     content: [
+      "-apple-system",
+      "BlinkMacSystemFont",
+      "\"SF Pro Text\"",
+      "\"Segoe UI\"",
       "\"PingFang SC\"",
       "\"Hiragino Sans GB\"",
       "\"Noto Sans SC\"",
       "\"Source Han Sans SC\"",
       "\"Microsoft YaHei UI\"",
       "\"Microsoft YaHei\"",
-      "-apple-system",
-      "BlinkMacSystemFont",
-      "\"Segoe UI\"",
       "sans-serif",
     ].join(", "),
     mono: [
